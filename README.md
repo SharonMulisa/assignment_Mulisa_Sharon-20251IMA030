@@ -29,3 +29,29 @@ ALTER SESSION SET CURRENT_SCHEMA=sunrise;
 -- Verify
 SELECT COUNT(*) FROM customers; -- 6
 SELECT COUNT(*) FROM order_items; -- 28
+## Screenshots
+
+### Q1 INNER JOIN
+![Q1](no1.jpeg)
+
+### Q2 Multi-JOIN
+![Q2](no2.jpeg)
+
+### Q3 LEFT JOIN
+![Q3](no3.jpeg)
+
+### Q4 CTE
+![Q4](no4.jpeg)
+
+### Q5 RANK()
+![Q5](no5.jpeg)
+
+### Q6 ROW_NUMBER()
+![Q6](no6.jpeg)
+
+### Q7 Running Total
+![Q7](no7.jpeg)
+
+### Q8 LAG()
+![Q8](no8.jpeg)
+
