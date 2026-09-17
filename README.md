@@ -52,6 +52,3 @@ SELECT COUNT(*) FROM order_items; -- 28
 ### Q7 Running Total
 ![Q7](no7.jpeg)
 
-### Q8 LAG()
-![Q8](no8.jpeg)
-
