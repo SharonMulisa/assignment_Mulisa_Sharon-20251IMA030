@@ -1,0 +1,31 @@
+# AUCA - PL/SQL Assignment II - PDB Management
+Reg: 20251IMA030 - Mulisa Sharon
+
+## Task 1: Main PDB sh_pdb_20251IMA030
+**Commands executed:**
+CREATE PLUGGABLE DATABASE sh_pdb_20251IMA030 ADMIN USER pdbadmin IDENTIFIED BY Sharon123 FILE_NAME_CONVERT=('PDBSEED','sh_pdb_20251IMA030');
+ALTER PLUGGABLE DATABASE sh_pdb_20251IMA030 OPEN;
+ALTER SESSION SET CONTAINER=sh_pdb_20251IMA030;
+CREATE USER sharon_plsqlauca_20251IMA030 IDENTIFIED BY Sharon123;
+GRANT CONNECT, RESOURCE, DBA TO sharon_plsqlauca_20251IMA030;
+
+Result: PDB CON_ID 4 READ WRITE, user verified.
+Screenshots: 01-04
+
+## Task 2: Temp PDB sh_to_delete_pdb_20251IMA030
+CREATE PLUGGABLE DATABASE sh_to_delete_pdb_20251IMA030 ADMIN USER pdbadmin IDENTIFIED BY Sharon123 FILE_NAME_CONVERT=('PDBSEED','sh_to_delete_pdb_20251IMA030');
+ALTER PLUGGABLE DATABASE sh_to_delete_pdb_20251IMA030 OPEN;
+-- verification SHOW PDBS shows CON_ID 5 READ WRITE
+ALTER PLUGGABLE DATABASE sh_to_delete_pdb_20251IMA030 CLOSE;
+DROP PLUGGABLE DATABASE sh_to_delete_pdb_20251IMA030 INCLUDING DATAFILES;
+-- final SHOW PDBS only shows PDB$SEED, ORCLPDB, SH_PDB_20251IMA030
+
+Result: Temp PDB dropped successfully.
+Screenshots: 05-08
+
+## Final Verification
+SHOW PDBS final result: 3 PDBs (PDB$SEED, ORCLPDB, SH_PDB_20251IMA030)
+SHOW CON_NAME: SH_PDB_20251IMA030
+SELECT USERNAME: SHARON_PLSQLAUCA_20251IMA030
+
+Conclusion: Both tasks completed successfully as per assignment requirements.
